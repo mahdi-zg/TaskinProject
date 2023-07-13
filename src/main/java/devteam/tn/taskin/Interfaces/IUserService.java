@@ -31,4 +31,6 @@ public interface IUserService {
     User findUserByEmail(String email);
 
     void deleteUser(String cin) throws IOException;
+
+    User getUserById(Long userId);
 }

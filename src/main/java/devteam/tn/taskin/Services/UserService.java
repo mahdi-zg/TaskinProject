@@ -29,6 +29,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import static devteam.tn.taskin.Constant.FileConstant.*;
 import static devteam.tn.taskin.Constant.UserImplConstant.*;
@@ -181,6 +182,13 @@ public class UserService implements IUserService, UserDetailsService {
         User user = userRepository.findUserByCin(cin);
         userRepository.deleteById(user.getId());
     }
+
+    @Override
+    public User getUserById(Long userId) {
+        Optional<User> userOptional = userRepository.findById(userId);
+        return userOptional.orElse(null);
+    }
+
 
     private String encodePassword(String password) {
         return passwordEncoder.encode(password);
