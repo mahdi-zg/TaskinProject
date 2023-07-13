@@ -1,6 +1,7 @@
 package devteam.tn.taskin.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import devteam.tn.taskin.Enumeration.Status;
 import lombok.*;
 
 import javax.persistence.*;
@@ -31,6 +32,7 @@ public class Booking implements Serializable {
     private String preferenceDate;
     private String region;
     private String message;
+    private Status status;
 
     @JsonIgnore
     @OneToOne(mappedBy="booking")
