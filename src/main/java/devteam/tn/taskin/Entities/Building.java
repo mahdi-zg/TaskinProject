@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -26,10 +27,10 @@ public class Building implements Serializable {
 
     @JsonIgnore
     @ManyToMany(mappedBy="buildings",cascade = CascadeType.ALL)
-    private Set<User> users;
+    private Set<User> users = new HashSet<>();
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy="building")
-    private Set<Promoter> promoters;
+    private Set<Promoter> promoters = new HashSet<>();
 
 }

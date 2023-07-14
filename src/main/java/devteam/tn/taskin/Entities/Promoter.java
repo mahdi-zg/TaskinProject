@@ -17,17 +17,12 @@ public class Promoter implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPromoter;
-    private String promoterId;
     private String denomination;
     private String governorate;
     private String projectAdress;
     private Integer capacity;
     private LocalDate keyDate;
     private Integer contractDuration;
-
-
-
-
 
 
     @JsonIgnore
